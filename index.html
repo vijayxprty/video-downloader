@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video Downloader — free, no store</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Video Downloader</h1>
+  <p class="sub">Paste a public video link. YouTube, Instagram, Pinterest, or any other public web video page.</p>
+
+  <label for="url">Video link</label>
+  <textarea id="url" rows="3" placeholder="Paste a link here, for example a YouTube, Instagram or Pinterest link…"></textarea>
+
+  <button id="checkBtn">Check video</button>
+
+  <div id="platform" class="platform" hidden></div>
+
+  <div id="result" class="card" hidden>
+    <img id="thumb" alt="" hidden>
+    <h2 id="title"></h2>
+    <p id="meta"></p>
+    <div class="actions">
+      <a id="mp4Btn" href="#" download>Download MP4 (video)</a>
+      <a id="mp3Btn" href="#" download>Download MP3 (audio)</a>
+    </div>
+    <p class="note">Only download your own videos, public-domain / Creative Commons videos, or videos you have permission for.</p>
+  </div>
+
+  <div id="error" class="error" hidden></div>
+
+  <details>
+    <summary>Backend settings</summary>
+    <label for="backend">Backend URL</label>
+    <input id="backend" type="text" inputmode="url" placeholder="http://localhost:8000">
+    <p class="note">Locally this is <code>http://localhost:8000</code>. When deployed, set it to your free Hugging Face Space URL. No private URL is hard-coded into this page.</p>
+    <button id="saveBackend">Save backend URL</button>
+  </details>
+
+  <p class="note">Private, login-only, removed, age-restricted, geo-blocked, or DRM-protected videos are not downloaded. You will get a specific reason why, not a generic error. Downloaded files are not stored permanently — the backend deletes its temporary copy after sending it to you.</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
